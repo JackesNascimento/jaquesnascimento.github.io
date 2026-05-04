@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jaques Oliveira | Especialista ISP & Full Stack</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0b0e14;
+            --card-bg: #161b22;
+            --text-primary: #e6edf3;
+            --text-secondary: #8b949e;
+            --accent: #2f81f7;
+            --accent-glow: rgba(47, 129, 247, 0.3);
+            --border: #30363d;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            background-color: var(--bg); 
+            color: var(--text-primary); 
+            font-family: 'Inter', sans-serif; 
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+
+        /* Header & Hero */
+        header { 
+            height: 80vh; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: flex-start;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero-badge {
+            background: var(--accent-glow);
+            color: var(--accent);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        h1 { font-size: 3.5rem; font-weight: 700; margin-bottom: 10px; color: #fff; }
+        .hero-tagline { font-size: 1.5rem; color: var(--text-secondary); margin-bottom: 30px; }
+        
+        .btn-contact {
+            background: var(--accent);
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+        .btn-contact:hover { transform: translateY(-3px); box-shadow: 0 10px 20px var(--accent-glow); }
+
+        /* Sections */
+        section { padding: 80px 0; border-bottom: 1px solid var(--border); }
+        h2 { font-size: 1.8rem; margin-bottom: 40px; display: flex; align-items: center; gap: 10px; }
+        h2::after { content: ""; height: 1px; background: var(--border); flex-grow: 1; }
+
+        /* Skills Grid */
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .skill-card { 
+            background: var(--card-bg); 
+            padding: 25px; 
+            border-radius: 12px; 
+            border: 1px solid var(--border); 
+            transition: 0.3s;
+        }
+        .skill-card:hover { border-color: var(--accent); transform: translateY(-5px); }
+        .skill-card h3 { color: var(--accent); margin-bottom: 15px; font-size: 1.1rem; }
+        .skill-list { list-style: none; color: var(--text-secondary); font-size: 0.95em; }
+        .skill-list li { margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+        .skill-list li::before { content: "▹"; color: var(--accent); }
+
+        /* Projects */
+        .project-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 20px;
+        }
+        .project-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+        .project-title { font-size: 1.3rem; font-weight: 600; color: #fff; }
+        .tech-stack { font-family: 'Fira Code', monospace; font-size: 0.8em; color: var(--accent); }
+
+        /* Experience */
+        .exp-item { margin-bottom: 40px; position: relative; padding-left: 30px; }
+        .exp-item::before { 
+            content: ""; position: absolute; left: 0; top: 10px; width: 10px; height: 10px; 
+            background: var(--accent); border-radius: 50%; 
+        }
+        .exp-date { font-size: 0.85em; color: var(--text-secondary); margin-bottom: 5px; }
+        .exp-company { font-weight: 700; font-size: 1.2rem; color: #fff; }
+        .exp-role { color: var(--accent); margin-bottom: 15px; font-style: italic; }
+
+        footer { padding: 50px 0; text-align: center; color: var(--text-secondary); font-size: 0.9em; }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            .hero-tagline { font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <div class="hero-badge">Disponível para novos projetos</div>
+            <h1>Jaques Oliveira</h1>
+            <p class="hero-tagline">Especialista em Automação para ISPs & Desenvolvedor Full Stack</p>
+            <a href="mailto:jaques_on@yahoo.com.br" class="btn-contact">Entrar em contato</a>
+        </header>
+
+        <section id="about">
+            <h2>Sobre mim</h2>
+            <p style="color: var(--text-secondary); max-width: 800px;">
+                Baseado em Hortolândia, SP, sou um desenvolvedor apaixonado por conectar infraestrutura de rede e software. 
+                Especialista em criar pontes de automação para provedores de internet, transformando processos manuais em fluxos inteligentes e eficientes.
+            </p>
+        </section>
+
+        <section id="skills">
+            <h2>Habilidades Técnicas</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>DevOps & Infraestrutura</h3>
+                    <ul class="skill-list">
+                        <li>Configuração de Servidores Linux</li>
+                        <li>Containerização com Docker</li>
+                        <li>Deploy e Gestão de Aplicações</li>
+                        <li>Segurança e Otimização de Servidores</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h3>Automação & IA</h3>
+                    <ul class="skill-list">
+                        <li>Workflows Avançados com n8n</li>
+                        <li>Desenvolvimento de Chatbots com IA</li>
+                        <li>Integração de LLMs em processos</li>
+                        <li>Automação de Marketing e Vendas (Evolution API)</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h3>ISP & Full Stack</h3>
+                    <ul class="skill-list">
+                        <li>Provisionamento de OLTs (Nokia, ZTE)</li>
+                        <li>PHP (Laravel) & Node.js (NestJS)</li>
+                        <li>Frontend (Vue.js 3, React)</li>
+                        <li>Monitoramento FTTH e APIs de Operadoras</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Projetos de Destaque</h2>
+            
+            <div class="project-card">
+                <div class="project-header">
+                    <span class="project-title">Automação de Prospecção IA</span>
+                    <span class="tech-stack">n8n | IA | Evolution API</span>
+                </div>
+                <p style="color: var(--text-secondary); font-size: 0.95em;">
+                    Desenvolvimento de agentes inteligentes para prospecção automática via WhatsApp, integrando workflows do n8n com processamento de linguagem natural para qualificação de leads.
+                </p>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <span class="project-title">GestemACS & Deploy Docker</span>
+                    <span class="tech-stack">Docker | Node.js | Linux</span>
+                </div>
+                <p style="color: var(--text-secondary); font-size: 0.95em;">
+                    Arquitetura de provisionamento ZTP rodando em ambientes isolados Docker, garantindo portabilidade e escalabilidade em servidores Linux para operações ISP.
+                </p>
+            </div>
+        </section>
+      
+        <section id="experience">
+            <h2>Experiência Recente</h2>
+            
+            <div class="exp-item">
+                <div class="exp-date">2024 - Atual</div>
+                <div class="exp-company">Luxfibra</div>
+                <div class="exp-role">Especialista em Automação e Suporte Técnico</div>
+                <ul class="skill-list">
+                    <li>Desenvolvimento de sistemas de monitoramento de rompimentos de fibra.</li>
+                    <li>Otimização do provisionamento de ONUs em larga escala.</li>
+                    <li>Integração de APIs de serviços para gestão de rede.</li>
+                </ul>
+            </div>
+
+            <div class="exp-item">
+                <div class="exp-date">Jan/2023 - Nov/2024</div>
+                <div class="exp-company">Worktek Engenharia</div>
+                <div class="exp-role">FullStack Developer & Gestor de TI</div>
+                <p style="color: var(--text-secondary); font-size: 0.9em;">Liderança técnica e desenvolvimento de soluções customizadas.</p>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Projetos de Destaque</h2>
+            
+            <div class="project-card">
+                <div class="project-header">
+                    <span class="project-title">GestemACS</span>
+                    <span class="tech-stack">Node.js | GenieACS | ZTP</span>
+                </div>
+                <p style="color: var(--text-secondary); font-size: 0.95em;">
+                    Middleware focado em Zero Touch Provisioning para OLTs, automatizando a configuração de dispositivos de rede via protocolo TR-069.
+                </p>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <span class="project-title">ConvyHub</span>
+                    <span class="tech-stack">PHP | Laravel | Vue 3</span>
+                </div>
+                <p style="color: var(--text-secondary); font-size: 0.95em;">
+                    Sistema ERP/CRM completo voltado para automação comercial e gestão de vendas.
+                </p>
+            </div>
+        </section>
+
+        <footer>
+            <p>© 2026 Jaques Oliveira do Nascimento | Hortolândia - SP</p>
+            <div style="margin-top: 15px;">
+                <a href="https://linkedin.com/in/jaquesn" style="color: var(--accent); text-decoration: none; margin: 0 10px;">LinkedIn</a>
+                <a href="#" style="color: var(--accent); text-decoration: none; margin: 0 10px;">GitHub</a>
+            </div>
+        </footer>
+    </div>
+
+</body>
+</html>
